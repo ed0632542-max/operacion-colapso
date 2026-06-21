@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERACIÓN COLAPSO | ARVIND Consultoría</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlack: '#111111',
+                        brandGray: '#1E1E1E',
+                        brandWhite: '#F5F5F5',
+                        brandGold: '#B89C7A',
+                        brandGoldHover: '#9A7E5C',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111111;
+            color: #F5F5F5;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* Ocultar barra de scroll estética premium */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B89C7A;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-brandBlack/80 backdrop-blur-md border-b border-white/5 uppercase text-[10px] tracking-[0.25em]">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-bold text-brandWhite flex items-center gap-2">
+                <span class="text-brandGold font-light text-lg">▲</span> ARVIND <span class="text-gray-500 font-light hidden sm:inline">| CONSULTORÍA</span>
+            </div>
+            <div class="hidden lg:flex space-x-6 text-gray-400">
+                <a href="#inicio" class="hover:text-brandGold transition-colors">Inicio</a>
+                <a href="#nosotros" class="hover:text-brandGold transition-colors">Nosotros</a>
+                <a href="#diagnostico" class="hover:text-brandGold transition-colors">Diagnóstico</a>
+                <a href="#nodos" class="hover:text-brandGold transition-colors">Nodos</a>
+                <a href="#propuesta" class="hover:text-brandGold transition-colors">Propuestas</a>
+                <a href="#cronograma" class="hover:text-brandGold transition-colors">Ejecución</a>
+                <a href="#beneficios" class="hover:text-brandGold transition-colors">Beneficios</a>
+            </div>
+            <a href="#propuesta" class="bg-brandGold text-brandBlack text-[9px] font-bold px-4 py-2 hover:bg-brandGoldHover transition-colors">Ver Propuesta</a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="parallax relative h-screen flex items-center justify-center pt-20" style="background-image: linear-gradient(to bottom, rgba(17,17,17,0.4), #111111), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <span class="text-brandGold text-xs font-semibold tracking-[0.5em] uppercase block mb-6 animate-pulse">Estudio de Infraestructura Compleja</span>
+            <h1 class="text-5xl md:text-8xl font-light tracking-tight text-brandWhite mb-4">
+                OPERACIÓN <span class="font-bold text-brandGold block mt-2 sm:inline sm:mt-0">COLAPSO</span>
+            </h1>
+            <p class="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-12">
+                Rediseño Operativo de la Central del Norte con presupuesto y espacio limitado.
+            </p>
+            <a href="#nosotros" class="inline-flex items-center gap-2 border border-brandGold text-brandGold text-xs font-medium uppercase tracking-[0.2em] px-8 py-4 hover:bg-brandGold hover:text-brandBlack transition-all duration-300">
+                Ver propuesta <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="nosotros" class="py-32 bg-brandBlack border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <span class="text-brandGold text-xs tracking-[0.3em] uppercase block mb-3">— ARVIND LOGISTICS</span>
+                    <h2 class="text-3xl md:text-4xl text-brandWhite font-light tracking-tight uppercase leading-snug">
+                        Soluciones Ágiles para Nodos de Alta Densidad
+                    </h2>
+                </div>
+                <div class="lg:col-span-7 text-gray-400 font-light space-y-6 leading-relaxed text-sm md:text-base">
+                    <p>
+                        **ARVIND** es una firma consultora especializada en el análisis y reestructuración de sistemas de transporte masivo. Frente al colapso funcional del nodo norte, desarrollamos modelos adaptativos basados en optimización espacial y control micromovilidad sin recurrir a gasto de infraestructura pesada.
+                    </p>
+                    <div class="pt-8 border-t border-white/5">
+                        <span class="text-brandWhite text-xs uppercase tracking-wider font-semibold block mb-2">Objetivo General</span>
+                        <p class="text-brandGold italic">
+                            Optimizar los flujos vehiculares, peatonales y multimodales de la Terminal Central de Autobuses del Norte mediante intervenciones tácticas de bajo costo y alto impacto, mitigando la saturación operativa e incrementando los índices de seguridad en escenarios de confinamiento espacial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brandGray border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center lg:text-left">
+                <span class="text-brandGold text-xs tracking-[0.3em] uppercase block mb-2">Estructura Organizacional</span>
+                <h3 class="text-xl md:text-2xl text-brandWhite uppercase font-light tracking-widest">Célula de Ingeniería Avanzada</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="bg-brandBlack p-8 border-t-2 border-brandGold flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] text-brandGold uppercase tracking-wider block mb-1">Project Director</span>
+                        <h4 class="text-base font-semibold text-brandWhite">Fer</h4>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-6 font-light">Dirección técnica general y diseño estratégico del plan corporativo.</p>
+                </div>
+                <div class="bg-brandBlack p-8 border-t-2 border-gray-700 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Web & Systems Architect</span>
+                        <h4 class="text-base font-semibold text-brandWhite">Dorian</h4>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-6 font-light">Desarrollo y diseño de la plataforma digital e integración de datos técnicos.</p>
+                </div>
+                <div class="bg-brandBlack p-8 border-t-2 border-gray-700 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Technical Documentation</span>
+                        <h4 class="text-base font-semibold text-brandWhite">Richy</h4>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-6 font-light">Redacción técnica, dictamen de ingeniería e informes de viabilidad.</p>
+                </div>
+                <div class="bg-brandBlack p-8 border-t-2 border-gray-700 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Regulatory & Analytics</span>
+                        <h4 class="text-base font-semibold text-brandWhite">Mareli</h4>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-6 font-light">Investigación de normatividad federal, marcos legales y análisis de matrices.</p>
+                </div>
+                <div class="bg-brandBlack p-8 border-t-2 border-gray-700 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] text-gray-400 uppercase tracking-wider block mb-1">Visual Modeling</span>
+                        <h4 class="text-base font-semibold text-brandWhite">Rafa</h4>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-6 font-light">Modelado tridimensional, volumetría estructural y soporte en sitio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brandBlack">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <i data-lucide="info" class="w-8 h-8 text-brandGold mx-auto mb-6"></i>
+            <h3 class="text-xs tracking-[0.4em] uppercase text-brandGold mb-6">Introducción Operativa</h3>
+            <p class="text-gray-300 font-light text-sm md:text-base leading-relaxed text-justify">
+                La Central del Norte procesa diariamente miles de operaciones de transporte interurbano, convirtiéndose en un punto crítico de enlace de la Ciudad de México. La falta de espacio, la competencia por el derecho de vía entre unidades masivas y servicios de plataformas tecnológicas (Uber, Didi, Taxis), sumada a una infraestructura que data del siglo pasado, genera un retraso logístico sistemático. "Operación Colapso" interviene este espacio con un enfoque quirúrgico: reorganizar el suelo existente bajo estrictos techos presupuestales.
+            </p>
+        </div>
+    </section>
+
+    <section id="diagnostico" class="py-24 bg-brandGray">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16">
+                <span class="text-brandGold text-xs tracking-[0.3em] uppercase block mb-2">— AUDITORÍA DE CAMPO</span>
+                <h3 class="text-2xl md:text-3xl text-brandWhite font-light uppercase tracking-tight">Diagnóstico Crítico Actual</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="bg-brandBlack rounded-sm overflow-hidden border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1513828583815-c4988c492855?auto=format&fit=crop&w=400&q=80" alt="Saturación" class="w-full h-32 object-cover opacity-60">
+                    <div class="p-6">
+                        <i data-lucide="truck" class="w-5 h-5 text-brandGold mb-4"></i>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider text-brandWhite mb-2">Saturación Vehicular</h4>
+                        <p class="text-[11px] text-gray-400 font-light">Cuellos de botella insolubles en los accesos perimetrales por autobuses en espera.</p>
+                    </div>
+                </div>
+                <div class="bg-brandBlack rounded-sm overflow-hidden border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1547483238-f400e65ccd56?auto=format&fit=crop&w=400&q=80" alt="Flujos" class="w-full h-32 object-cover opacity-60">
+                    <div class="p-6">
+                        <i data-lucide="git-commit" class="w-5 h-5 text-brandGold mb-4"></i>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider text-brandWhite mb-2">Conflicto de Flujos</h4>
+                        <p class="text-[11px] text-gray-400 font-light">Intersección de trayectorias entre peatones de paso, autos particulares y transporte federal.</p>
+                    </div>
+                </div>
+                <div class="bg-brandBlack rounded-sm overflow-hidden border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=400&q=80" alt="Infraestructura" class="w-full h-32 object-cover opacity-60">
+                    <div class="p-6">
+                        <i data-lucide="alert-triangle" class="w-5 h-5 text-brandGold mb-4"></i>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider text-brandWhite mb-2">Infraestructura Limitada</h4>
+                        <p class="text-[11px] text-gray-400 font-light">Espacio físico inalterable debido a la densificación urbana circundante.</p>
+                    </div>
+                </div>
+                <div class="bg-brandBlack rounded-sm overflow-hidden border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Información" class="w-full h-32 object-cover opacity-60">
+                    <div class="p-6">
+                        <i data-lucide="info" class="w-5 h-5 text-brandGold mb-4"></i>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider text-brandWhite mb-2">Info Insuficiente</h4>
+                        <p class="text-[11px] text-gray-400 font-light">Ausencia de canales claros de orientación en tiempo real para usuarios foráneos.</p>
+                    </div>
+                </div>
+                <div class="bg-brandBlack rounded-sm overflow-hidden border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400&q=80" alt="Accesibilidad" class="w-full h-32 object-cover opacity-60">
+                    <div class="p-6">
+                        <i data-lucide="accessibility" class="w-5 h-5 text-brandGold mb-4"></i>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider text-brandWhite mb-2">Accesibilidad Crítica</h4>
+                        <p class="text-[11px] text-gray-400 font-light">Dificultades de incorporación para personas con movilidad reducida en áreas críticas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brandBlack">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-gradient-to-r from-brandGray to-brandBlack p-12 border-l-4 border-brandGold">
+                <span class="text-brandGold text-xs font-semibold uppercase tracking-[0.2em] block mb-2">Eje del Conflicto</span>
+                <h4 class="text-2xl font-light text-brandWhite uppercase tracking-wide mb-6">La Falla Principal: Descoordinación Dinámica</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-xs font-light text-gray-400 leading-relaxed">
+                    <p><strong class="text-brandWhite">Saturación y Horas Pico:</strong> El ingreso concentrado de corridas satura los andenes, provocando retrasos en cascada hacia las vialidades conectadas.</p>
+                    <p><strong class="text-brandWhite">Fenómeno Uber/Plataformas:</strong> La falta de una bahía técnica exclusiva genera paradas en segunda fila, incrementando un 35% el riesgo de alcances y accidentes menores.</p>
+                    <p><strong class="text-brandWhite">Vulnerabilidad Peatonal:</strong> El flujo que transita desde la estación de Metro adyacente cruza de forma desordenada en zonas de maniobra pesada, forzando cierres preventivos continuos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nodos" class="py-24 bg-brandGray border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12">
+                <span class="text-brandGold text-xs tracking-[0.3em] uppercase block mb-2">— ARQUITECTURA DEL SITIO</span>
+                <h3 class="text-2xl font-light text-brandWhite uppercase">Esquema de Nodos Críticos Detectados</h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="p-4 bg-brandBlack border-l-2 border-brandGold">
+                        <span class="text-brandWhite font-semibold text-xs block">Nodo A: Eje Eje Central & Entrada</span>
+                        <p class="text-[11px] text-gray-500 font-light">Saturación por incorporación desordenada.</p>
+                    </div>
+                    <div class="p-4 bg-brandBlack border-l-2 border-gray-600">
+                        <span class="text-brandWhite font-semibold text-xs block">Nodo B: Frente de Bahías Peatonal</span>
+                        <p class="text-[11px] text-gray-500 font-light">Conflicto severo de descenso de aplicaciones.</p>
+                    </div>
+                    <div class="p-4 bg-brandBlack border-l-2 border-gray-600">
+                        <span class="text-brandWhite font-semibold text-xs block">Nodo C: Conectividad Metro L5</span>
+                        <p class="text-[11px] text-gray-500 font-light">Cruces a nivel sin semaforización inteligente.</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-8 bg-brandBlack p-8 border border-white/5 rounded-sm relative overflow-hidden h-80 flex flex-col justify-between">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#B89C7A_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                    <div class="text-[10px] text-brandGold uppercase font-mono flex justify-between z-10">
+                        <span>[MODELO TOPOLÓGICO DE FLUJOS]</span>
+                        <span>ESCALA: S/E</span>
+                    </div>
+                    <div class="relative w-full h-full my-auto flex items-center justify-around z-10">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full border border-brandGold flex items-center justify-center text-xs text-brandGold font-bold bg-brandBlack">A</div>
+                            <span class="text-[9px] mt-2 text-gray-400 uppercase tracking-widest">Acceso Principal</span>
+                        </div>
+                        <div class="h-[1px] bg-brandGold flex-1 mx-2 relative"><span class="absolute -top-2 left-1/2 text-[8px] text-brandGold font-mono">⚡ COLLAPSE ZONE</span></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full border border-brandWhite flex items-center justify-center text-xs text-brandWhite font-bold bg-brandGray">B</div>
+                            <span class="text-[9px] mt-2 text-gray-400 uppercase tracking-widest">Andenes / Uber</span>
+                        </div>
+                        <div class="h-[1px] bg-gray-700 flex-1 mx-2"></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-xs text-gray-500 bg-brandBlack">C</div>
+                            <span class="text-[9px] mt-2 text-gray-400 uppercase tracking-widest">Intersección Metro</span>
+                        </div>
+                    </div>
+                    <div class="text-[9px] text-gray-500 font-mono text-right z-10">
+                        ARVIND CO. LOC_CDMX_NORTH
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="propuesta" class="py-24 bg-brandBlack">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <span class="text-brandGold text-xs tracking-[0.3em] uppercase block mb-2">— INGENIERÍA COMPENSATORIA</span>
+                <h3 class="text-3xl text-brandWhite font-light uppercase tracking-tight">Soluciones Técnicas de Bajo Costo</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-8 bg-brandGray border border-white/5 hover:border-brandGold/30 transition-all">
+                    <i data-lucide="eye" class="w-6 h-6 text-brandGold mb-6"></i>
+                    <h4 class="text-base font-semibold uppercase tracking-wider text-brandWhite mb-3">Señalización Inteligente</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed">Instalación de balizamiento reflexivo activo y direccionamiento dinámico para evitar la ocupación ociosa del carril confinador.</p>
+                </div>
+                <div class="p-8 bg-brandGray border border-white/5 hover:border-brandGold/30 transition-all">
+                    <i data-lucide="monitor" class="w-6 h-6 text-brandGold mb-6"></i>
+                    <h4 class="text-base font-semibold uppercase tracking-wider text-brandWhite mb-3">Pantallas Informativas</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed">Monitores de alta luminosidad en nodos de transferencia externa para pre-asignación de andenes a operadores de aplicaciones.</p>
+                </div>
+                <div class="p-8 bg-brandGray border border-white/5 hover:border-brandGold/30 transition-all">
+                    <i data-lucide="qr-code" class="w-6 h-6 text-brandGold mb-6"></i>
+                    <h4 class="text-base font-semibold uppercase tracking-wider text-brandWhite mb-3">QR Interactivos</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed">Código universal de posicionamiento de unidades para descarga ágil de equipaje y control predictivo desde teléfonos móviles.</p>
+                </div>
+                <div class="p-8 bg-brandGray border border-white/5 hover:border-brandGold/30 transition-all">
+                    <i data-lucide="shuffle" class="w-6 h-6 text-brandGold mb-6"></i>
+                    <h4 class="text-base font-semibold uppercase tracking-wider text-brandWhite mb-3">Redistribución Vehicular</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed">Geocercas virtuales para el ordenamiento de servicios por aplicación móvil, reduciendo tiempos muertos en un 40%.</p>
+                </div>
+                <div class="p-8 bg-brandGray border border-white/5 hover:border-brandGold/30 transition-all">
+                    <i data-lucide="accessibility" class="w-6 h-6 text-brandGold mb-6"></i>
+                    <h4 class="text-base font-semibold uppercase tracking-wider text-brandWhite mb-3">Accesibilidad Universal</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed">Guías podotáctiles y adecuaciones geométricas a nivel en banquetas exteriores sin alteración estructural mayor.</p>
+                </div>
+                <div class="p-8 bg-brandGray border border-white/5 hover:border-brandGold/30 transition-all">
+                    <i data-lucide="shield-alert" class="w-6 h-6 text-brandGold mb-6"></i>
+                    <h4 class="text-base font-semibold uppercase tracking-wider text-brandWhite mb-3">Zonas Seguras Sísmicas</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed">Rediseño del layout de evacuación mediante pasillos libres de obstáculos comerciales, listos para sismos de alta intensidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cronograma" class="py-24 bg-brandGray">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <span class="text-brandGold text-xs tracking-[0.3em] uppercase block mb-2">— RUTA CRÍTICA</span>
+                <h3 class="text-2xl font-light text-brandWhite uppercase">Periodo de Ejecución Táctica (8 Semanas)</h3>
+            </div>
+            <div class="relative border-l border-white/10 pl-6 space-y-12">
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1 w-3 h-3 bg-brandGold rounded-full"></div>
+                    <span class="text-[10px] text-brandGold font-mono uppercase tracking-widest block mb-1">Semanas 01–02</span>
+                    <h4 class="text-sm font-semibold text-brandWhite uppercase">Diagnóstico Físico e Histórico</h4>
+                    <p class="text-xs text-gray-400 font-light mt-1">Levantamientos topográficos expeditos, aforos de micromovilidad y análisis de matrices origen-destino en accesos.</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1 w-3 h-3 bg-white/40 rounded-full"></div>
+                    <span class="text-[10px] text-brandGold font-mono uppercase tracking-widest block mb-1">Semanas 03–04</span>
+                    <h4 class="text-sm font-semibold text-brandWhite uppercase">Diseño Conceptual y Operativo</h4>
+                    <p class="text-xs text-gray-400 font-light mt-1">Simulación por software de los nuevos flujos vehiculares y validación del marco normativo con dependencias locales.</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1 w-3 h-3 bg-white/40 rounded-full"></div>
+                    <span class="text-[10px] text-brandGold font-mono uppercase tracking-widest block mb-1">Semanas 05–06</span>
+                    <h4 class="text-sm font-semibold text-brandWhite uppercase">Implementación Táctica</h4>
+                    <p class="text-xs text-gray-400 font-light mt-1">Instalación física de pantallas, balizamiento nocturno controlado y activación de geocercas en coordinación con plataformas digitales.</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1 w-3 h-3 bg-white/40 rounded-full"></div>
+                    <span class="text-[10px] text-brandGold font-mono uppercase tracking-widest block mb-1">Semanas 07–08</span>
+                    <h4 class="text-sm font-semibold text-brandWhite uppercase">Evaluación, Monitoreo y Ajuste</h4>
+                    <p class="text-xs text-gray-400 font-light mt-1">Auditoría final de tiempos de recorrido, medición de índices de conflicto peatonal y entrega del expediente de cierre técnico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="py-24 bg-brandBlack">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center lg:text-left">
+                <span class="text-brandGold text-xs tracking-[0.3em] uppercase block mb-2">— MÉTRICAS DE IMPACTO</span>
+                <h3 class="text-3xl text-brandWhite font-light uppercase tracking-tight">Beneficios Proyectados Cuantificables</h3>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-brandGray p-8 border border-white/5 rounded-sm">
+                    <canvas id="chartBeneficios" width="400" height="250"></canvas>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 bg-brandGray border-l-2 border-brandGold">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-brandWhite mb-1">Reducción del 45% en Congestión</h4>
+                        <p class="text-xs text-gray-400 font-light">Eliminación de la fila estática de autobuses y taxis sobre vialidades principales colindantes.</p>
+                    </div>
+                    <div class="p-6 bg-brandGray border-l-2 border-brandWhite">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-brandWhite mb-1">Disminución en Tiempos de Espera</h4>
+                        <p class="text-xs text-gray-400 font-light">Optimización del circuito de abordaje y descenso peatonal, agilizando transbordos al Metro CDMX.</p>
+                    </div>
+                    <div class="p-6 bg-brandGray border-l-2 border-brandWhite">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-brandWhite mb-1">Seguridad Estructural y Operativa</h4>
+                        <p class="text-xs text-gray-400 font-light">Cumplimiento total de distancias mínimas de frenado y zonas libres para evacuación rápida en sismos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brandGray">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="mb-12 text-center">
+                <span class="text-brandGold text-xs tracking-[0.3em] uppercase block mb-2">— PERSPECTIVA TÉCNICA</span>
+                <h3 class="text-xl font-light text-brandWhite uppercase tracking-widest">Conclusiones Corporativas</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs font-light text-gray-400 leading-relaxed text-justify">
+                <p>
+                    El análisis interdisciplinario de la Terminal Central del Norte demuestra que el colapso operativo no siempre demanda costosas expansiones de concreto, sino un diseño inteligente de flujos. La escasez presupuestaria obligó a nuestra firma a buscar eficiencias ocultas en el uso del suelo, optimizando la interacción digital-física de los diferentes sistemas de transporte involucrados.
+                </p>
+                <p>
+                    A través de la integración de tecnologías tácticas y un estricto apego normativo, la célula de ingeniería de **ARVIND** entrega un modelo escalable que demuestra que es factible devolver el orden y la seguridad vial a un nodo de alta densidad sin paralizar su operación cotidiana.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brandBlack border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <h3 class="text-xs tracking-[0.3em] uppercase text-brandGold mb-8 flex items-center gap-2">
+                <i data-lucide="book-open" class="w-4 h-4"></i> Acervo Bibliográfico y Normativo (APA)
+            </h3>
+            <ul class="space-y-4 text-[11px] font-mono text-gray-500 leading-relaxed">
+                <li>Instituto Nacional de Estadística y Geografía [INEGI]. (2024). <em>Estadística de Transporte Urbano de Pasajeros</em>. México: INEGI.</li>
+                <li>Secretaría de Desarrollo Agrario, Territorial y Urbano [SEDATU]. (2021). <em>Manual de Calles: Diseño Vial para Ciudades Mexicanas</em>. México: SEDATU-BID.</li>
+                <li>Secretaría de Movilidad de la Ciudad de México [SEMOVI]. (2023). <em>Plan Estratégico de Movilidad de la CDMX</em>. Gaceta Oficial de la Ciudad de México.</li>
+                <li>Secretaría de Infraestructura, Comunicaciones y Transportes [SICT]. (2022). <em>Norma NOM-086-SCT2-2022, Señalamiento y dispositivos para protección en zonas de obras viales</em>. Diario Oficial de la Federación.</li>
+                <li>Gobierno de la Ciudad de México. (2020). <em>Normas Técnicas Complementarias para el Proyecto Arquitectónico: Accesibilidad Universal</em>. Reglamento de Construcciones para el Distrito Federal.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-brandBlack border-t border-white/5 text-gray-500 text-xs">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-mono text-[10px] tracking-widest text-brandWhite">
+                © 2026 ARVIND LOGISTICS & INFRASTRUCTURE. ALL RIGHTS RESERVED.
+            </div>
+            <div class="flex space-x-6 text-[10px] tracking-wider uppercase">
+                <a href="#" class="hover:text-brandGold transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-brandGold transition-colors">Contacto</a>
+                <a href="#" class="hover:text-brandGold transition-colors">Términos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializar Iconos Lucide
+        lucide.createIcons();
+
+        // Configuración e inyección de la Gráfica de Beneficios mediante Chart.js
+        const ctx = document.getElementById('chartBeneficios').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Congestión Perimetral', 'Tiempo de Espera', 'Incidentes Viales', 'Efectividad Operativa'],
+                datasets: [
+                    {
+                        label: 'Situación Actual (%)',
+                        data: [95, 85, 70, 30],
+                        backgroundColor: '#1E1E1E',
+                        borderColor: '#444444',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Con Propuesta ARVIND (%)',
+                        data: [40, 35, 15, 85],
+                        backgroundColor: '#B89C7A',
+                        borderColor: '#B89C7A',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#F5F5F5',
+                            font: { family: 'Inter', size: 10 }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: '#888888', font: { size: 10 } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#888888', font: { size: 10 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
